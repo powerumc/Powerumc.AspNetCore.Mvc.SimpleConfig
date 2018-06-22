@@ -4,9 +4,9 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Powerumc.AspNetCore.Mvc.SimpleConfig\Powerumc.AspNetCore.Mvc.SimpleConfig.csproj" />
+    <PackageReference Include="Powerumc.AspNetCore.Mvc.SimpleConfig">
+      <Version>2.1.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.AspNetCore.Mvc.Core, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
