@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Powerumc.AspNetCore.Core\src\Powerumc.AspNetCore.Core\Powerumc.AspNetCore.Core.csproj" />
+  </ItemGroup>
+</Project>
