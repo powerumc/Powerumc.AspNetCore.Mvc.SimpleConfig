@@ -3,7 +3,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.DependencyInjection;
 using Powerumc.AspNetCore.Core.Domains;
 using Powerumc.AspNetCore.Mvc.SimpleConfig.Middlewares;
