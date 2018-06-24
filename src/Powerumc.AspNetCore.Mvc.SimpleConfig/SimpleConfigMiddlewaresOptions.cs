@@ -18,21 +18,21 @@ namespace Powerumc.AspNetCore.Mvc.SimpleConfig
             _applicationBuilder = applicationBuilder;
         }
 
-        public SimpleConfigMiddlewaresOptions UseTraceId()
+        public virtual SimpleConfigMiddlewaresOptions UseTraceId()
         {
             _applicationBuilder.UseMiddleware<TraceIdMiddleware>();
             
             return this;
         }
 
-        public SimpleConfigMiddlewaresOptions UseCors()
+        public virtual SimpleConfigMiddlewaresOptions UseCors()
         {
             _applicationBuilder.UseCors("CorsPolicy");
 
             return this;
         }
 
-        public SimpleConfigMiddlewaresOptions UseEventBus(string path)
+        public virtual SimpleConfigMiddlewaresOptions UseEventBus(string path)
         {
             var eventBus = _applicationBuilder.ApplicationServices.GetRequiredService<IEventBus>();
             

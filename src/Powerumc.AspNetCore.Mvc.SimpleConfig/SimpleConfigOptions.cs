@@ -20,14 +20,14 @@ namespace Powerumc.AspNetCore.Mvc.SimpleConfig
             _serviceCollection = serviceCollection;
         }
 
-        public SimpleConfigOptions AddDefault()
+        public virtual SimpleConfigOptions AddDefault()
         {
             _serviceCollection.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             return this;
         }
 
-        public SimpleConfigOptions AddDataProtection(string dirFromCurrentDirectory)
+        public virtual SimpleConfigOptions AddDataProtection(string dirFromCurrentDirectory)
         {
             var path = Path.Combine(Directory.GetCurrentDirectory(), dirFromCurrentDirectory);
             
@@ -38,7 +38,7 @@ namespace Powerumc.AspNetCore.Mvc.SimpleConfig
             return this;
         }
 
-        public SimpleConfigOptions AddCors()
+        public virtual SimpleConfigOptions AddCors()
         {
             _serviceCollection.AddCors(options => options.AddPolicy("CorsPolicy", builder =>
             {
@@ -51,7 +51,7 @@ namespace Powerumc.AspNetCore.Mvc.SimpleConfig
             return this;
         }
         
-        public SimpleConfigOptions AddTraceId()
+        public virtual SimpleConfigOptions AddTraceId()
         {
             _serviceCollection.AddTransient<TraceId>(o =>
             {
@@ -69,7 +69,7 @@ namespace Powerumc.AspNetCore.Mvc.SimpleConfig
             return this;
         }
 
-        public SimpleConfigOptions AddRegistComponents(string path)
+        public virtual SimpleConfigOptions AddRegistComponents(string path)
         {
             foreach (var filename in Directory.GetFiles(path, "*.dll"))
             {
@@ -87,21 +87,21 @@ namespace Powerumc.AspNetCore.Mvc.SimpleConfig
             return this;
         }
 
-        public SimpleConfigOptions AddEventBus()
+        public virtual SimpleConfigOptions AddEventBus()
         {
             _serviceCollection.AddSingleton<IEventBus, EventBus>();
 
             return this;
         }
 
-        public SimpleConfigOptions AddEventBus<TEventBus>() where TEventBus : class, IEventBus
+        public virtual SimpleConfigOptions AddEventBus<TEventBus>() where TEventBus : class, IEventBus
         {
             _serviceCollection.AddSingleton<IEventBus, TEventBus>();
 
             return this;
         }
 
-        public SimpleConfigOptions AddRegistDomainEventHandler(string path)
+        public virtual SimpleConfigOptions AddRegistDomainEventHandler(string path)
         {
             foreach (var filename in Directory.GetFiles(path, "*.dll"))
             {
