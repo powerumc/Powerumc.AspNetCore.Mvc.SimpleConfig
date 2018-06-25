@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powerumc.AspNetCore.Mvc.SimpleConfig", "src\Powerumc.AspNetCore.Mvc.SimpleConfig\Powerumc.AspNetCore.Mvc.SimpleConfig.csproj", "{24D5F392-DD00-46DD-81A1-EA269E198FA8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{77A93AFF-DD1F-4E02-88A8-E5C9D1F3AFE9}"
+ProjectSection(SolutionItems) = preProject
+	README.md = README.md
+EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{02FEBEB1-1E43-4E2D-83F5-6F631348F0A9}"
 EndProject
