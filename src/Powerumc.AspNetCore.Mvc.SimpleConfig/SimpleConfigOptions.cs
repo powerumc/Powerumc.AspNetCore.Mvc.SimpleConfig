@@ -80,7 +80,7 @@ namespace Powerumc.AspNetCore.Mvc.SimpleConfig
                         continue;
                     
                     System.Console.WriteLine($"RegistrationType: {registerAttribute.RegistrationType}, {type}");
-                    _serviceCollection.AddSingleton(registerAttribute.RegistrationType, type);
+                    _serviceCollection.Add(new ServiceDescriptor(registerAttribute.RegistrationType, type, registerAttribute.Lifetime));
                 }
             }
             
