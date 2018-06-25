@@ -32,11 +32,11 @@ namespace Powerumc.AspNetCore.Mvc.SimpleConfig
             return this;
         }
 
-        public virtual SimpleConfigMiddlewaresOptions UseEventBus(string path)
+        public virtual SimpleConfigMiddlewaresOptions UseEventBus(string dllFilesDirectory)
         {
             var eventBus = _applicationBuilder.ApplicationServices.GetRequiredService<IEventBus>();
             
-            foreach (var filename in Directory.GetFiles(path, "*.dll"))
+            foreach (var filename in Directory.GetFiles(dllFilesDirectory, "*.dll"))
             {
                 var assembly = Assembly.LoadFrom(filename);
                 foreach (var assemblyType in assembly.GetTypes())

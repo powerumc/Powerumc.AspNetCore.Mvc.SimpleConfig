@@ -69,9 +69,9 @@ namespace Powerumc.AspNetCore.Mvc.SimpleConfig
             return this;
         }
 
-        public virtual SimpleConfigOptions AddRegistComponents(string path)
+        public virtual SimpleConfigOptions AddRegistComponents(string dllFilesDirectory)
         {
-            foreach (var filename in Directory.GetFiles(path, "*.dll"))
+            foreach (var filename in Directory.GetFiles(dllFilesDirectory, "*.dll"))
             {
                 var assembly = Assembly.LoadFrom(filename);
                 foreach (var type in assembly.GetTypes())
@@ -101,9 +101,9 @@ namespace Powerumc.AspNetCore.Mvc.SimpleConfig
             return this;
         }
 
-        public virtual SimpleConfigOptions AddRegistDomainEventHandler(string path)
+        public virtual SimpleConfigOptions AddRegistDomainEventHandler(string dllFilesDirectory)
         {
-            foreach (var filename in Directory.GetFiles(path, "*.dll"))
+            foreach (var filename in Directory.GetFiles(dllFilesDirectory, "*.dll"))
             {
                 var assembly = Assembly.LoadFrom(filename);
                 foreach (var assemblyType in assembly.GetTypes())
