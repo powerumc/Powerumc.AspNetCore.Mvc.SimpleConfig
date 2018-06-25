@@ -38,9 +38,9 @@ namespace Powerumc.AspNetCore.Mvc.SimpleConfig
             return this;
         }
 
-        public virtual SimpleConfigOptions AddCors()
+        public virtual SimpleConfigOptions AddCors(string policyName = "CorsPolicy")
         {
-            _serviceCollection.AddCors(options => options.AddPolicy("CorsPolicy", builder =>
+            _serviceCollection.AddCors(options => options.AddPolicy(policyName, builder =>
             {
                 builder.AllowAnyOrigin()
                     .AllowAnyMethod()

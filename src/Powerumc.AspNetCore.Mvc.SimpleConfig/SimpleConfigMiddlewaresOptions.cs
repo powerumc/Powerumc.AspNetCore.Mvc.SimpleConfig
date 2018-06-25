@@ -25,9 +25,9 @@ namespace Powerumc.AspNetCore.Mvc.SimpleConfig
             return this;
         }
 
-        public virtual SimpleConfigMiddlewaresOptions UseCors()
+        public virtual SimpleConfigMiddlewaresOptions UseCors(string policyName = "CorsPolicy")
         {
-            _applicationBuilder.UseCors("CorsPolicy");
+            _applicationBuilder.UseCors(policyName);
 
             return this;
         }
