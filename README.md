@@ -12,7 +12,7 @@ dotnet add package Powerumc.AspNetCore.Mvc.SimpleConfig
 
 Easily configure frequently used configurations
 
-```chsarp
+```csharp
 using System;
 using System.Collections.Generic;
 using System.IO;
